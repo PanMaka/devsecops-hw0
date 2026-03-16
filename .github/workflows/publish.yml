@@ -1,14 +1,11 @@
 # Build and publish the docker image to GHCR
-
 name: Publish Docker Image
 
-# Start on git push
 on:
   push:
     branches:
       - main
 
-# Give permissions
 permissions:
   contents: read
   packages: write
@@ -36,4 +33,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository }}:latest
+          tags: ghcr.io/panmaka/devsecops-hw0:latest
